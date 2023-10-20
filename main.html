@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fortnite Loadout Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fortnite Loadout Generator</h1>
+    <button id="generateLoadout">Generate Random Loadout</button>
+    <div id="loadout">
+        <h2>Your Random Loadout:</h2>
+        <ul id="loadoutList">
+            <li>First Slot: <span id="firstslot"></span></li>
+            <li>Second Slot: <span id="secondslot"></span></li>
+            <li>Third Slot: <span id="thirdslot"></span></li>
+            <li>Forth Slot: <span id="forthslot"></span></li>
+            <li>Fifth Slot: <span id="fifthslot"></span></li>
+        </ul>
+    </div>
+
+    <script>
+        const firstslot = ["Twin Mag Ar", "Havoc Suppressed Ar", "Thermal Dmr", "Infiltrator Shotgun", "Maven Shotgun", "Sharptooth Shotgun", "Scoped Smg", "Combat Smg", "Supressed Pistol", "Supressed Sniper", "Crash Pad Jr", "Rocket Ram", "ShockWaves", "Turret", "C4", "Bush", "Bandages", "Medkits", "Medmist", "Minis", "Big pots", "Slap Juice", "Slap Splash", "Slurp Juice", "Small fries", "Flopper", "Fishing rod", "Jellyfish", "Sheild fish", "Heisted Breacher", "Heisted Maven", "Heisted P90", "Heisted Suppressed Pistol", "Drum Gun", "Boom Bow", "Chug Jug", "Charge Shotgun", "Shockwave Launcher", "Alien Gun", "Mk", "Stinger Smg", "Fruits or veggies"];
+        const secondslot = ["Twin Mag Ar", "Havoc Suppressed Ar", "Thermal Dmr", "Infiltrator Shotgun", "Maven Shotgun", "Sharptooth Shotgun", "Scoped Smg", "Combat Smg", "Supressed Pistol", "Supressed Sniper", "Crash Pad Jr", "Rocket Ram", "ShockWaves", "Turret", "C4", "Bush", "Bandages", "Medkits", "Medmist", "Minis", "Big pots", "Slap Juice", "Slap Splash", "Slurp Juice", "Small fries", "Flopper", "Fishing rod", "Jellyfish", "Sheild fish", "Heisted Breacher", "Heisted Maven", "Heisted P90", "Heisted Suppressed Pistol", "Drum Gun", "Boom Bow", "Chug Jug", "Charge Shotgun", "Shockwave Launcher", "Alien Gun", "Mk", "Stinger Smg", "Fruits or veggies"];
+        const thirdslot = ["Twin Mag Ar", "Havoc Suppressed Ar", "Thermal Dmr", "Infiltrator Shotgun", "Maven Shotgun", "Sharptooth Shotgun", "Scoped Smg", "Combat Smg", "Supressed Pistol", "Supressed Sniper", "Crash Pad Jr", "Rocket Ram", "ShockWaves", "Turret", "C4", "Bush", "Bandages", "Medkits", "Medmist", "Minis", "Big pots", "Slap Juice", "Slap Splash", "Slurp Juice", "Small fries", "Flopper", "Fishing rod", "Jellyfish", "Sheild fish", "Heisted Breacher", "Heisted Maven", "Heisted P90", "Heisted Suppressed Pistol", "Drum Gun", "Boom Bow", "Chug Jug", "Charge Shotgun", "Shockwave Launcher", "Alien Gun", "Mk", "Stinger Smg", "Fruits or veggies"];
+        const forthslot = ["Twin Mag Ar", "Havoc Suppressed Ar", "Thermal Dmr", "Infiltrator Shotgun", "Maven Shotgun", "Sharptooth Shotgun", "Scoped Smg", "Combat Smg", "Supressed Pistol", "Supressed Sniper", "Crash Pad Jr", "Rocket Ram", "ShockWaves", "Turret", "C4", "Bush", "Bandages", "Medkits", "Medmist", "Minis", "Big pots", "Slap Juice", "Slap Splash", "Slurp Juice", "Small fries", "Flopper", "Fishing rod", "Jellyfish", "Sheild fish", "Heisted Breacher", "Heisted Maven", "Heisted P90", "Heisted Suppressed Pistol", "Drum Gun", "Boom Bow", "Chug Jug", "Charge Shotgun", "Shockwave Launcher", "Alien Gun", "Mk", "Stinger Smg", "Fruits or veggies"];
+        const fifthslot = ["Twin Mag Ar", "Havoc Suppressed Ar", "Thermal Dmr", "Infiltrator Shotgun", "Maven Shotgun", "Sharptooth Shotgun", "Scoped Smg", "Combat Smg", "Supressed Pistol", "Supressed Sniper", "Crash Pad Jr", "Rocket Ram", "ShockWaves", "Turret", "C4", "Bush", "Bandages", "Medkits", "Medmist", "Minis", "Big pots", "Slap Juice", "Slap Splash", "Slurp Juice", "Small fries", "Flopper", "Fishing rod", "Jellyfish", "Sheild fish", "Heisted Breacher", "Heisted Maven", "Heisted P90", "Heisted Suppressed Pistol", "Drum Gun", "Boom Bow", "Chug Jug", "Charge Shotgun", "Shockwave Launcher", "Alien Gun", "Mk", "Stinger Smg", "Fruits or veggies"];
+
+        const generateButton = document.getElementById("generateLoadout");
+        const primaryWeaponSpan = document.getElementById("firstslot");
+        const secondslotSpan = document.getElementById("secondslot");
+        const thirdslotSpan = document.getElementById("thirdslot");
+        const forthslotSpan = document.getElementById("forthslot");
+        const utilitySpan = document.getElementById("fifthslot");
+
+        generateButton.addEventListener("click", generateLoadout);
+
+        function getRandomItem(array) {
+            const randomIndex = Math.floor(Math.random() * array.length);
+            return array[randomIndex];
+        }
+
+        function generateLoadout() {
+            primaryWeaponSpan.textContent = getRandomItem(firstslot);
+            secondslotSpan.textContent = getRandomItem(secondslot);
+            thirdslotSpan.textContent = getRandomItem(thirdslot);
+            forthslotSpan.textContent = getRandomItem(forthslot);
+            utilitySpan.textContent = getRandomItem(fifthslot);
+        }
+
+        // Initial loadout generation
+        generateLoadout();
+    </script>
+</body>
+</html>
